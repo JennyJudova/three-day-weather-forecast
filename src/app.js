@@ -61,11 +61,56 @@ export default function App() {
           </p>
         </div>
       )}
+      {weatherList && (
+        <ul>
+          {weatherList
+            .filter(
+              (weather) =>
+                weather.dt === weatherList[0].dt + 86400 ||
+                weather.dt === weatherList[0].dt + 86400 * 2 ||
+                weather.dt === weatherList[0].dt + 86400 * 3
+            )
+            .map((weather) => {
+              return (
+                <li key={weather.dt}>
+                  <p>{weather.dt_txt}</p>
+                  <img
+                    src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
+                    alt="weather logo"
+                  />
+                  <p>{weather.weather[0].description}</p>
+                  {Math.round(weather.main.temp_min - 273.15) ===
+                  Math.round(weather.main.temp_max - 273.15) ? (
+                    <p>{Math.round(weather.main.temp_max - 273.15)}°C</p>
+                  ) : (
+                    <p>
+                      {Math.round(weather.main.temp_min - 273.15)} °C -{' '}
+                      {Math.round(weather.main.temp_max - 273.15)}°C{' '}
+                    </p>
+                  )}
+                </li>
+              );
+            })}
+        </ul>
+      )}
     </div>
   );
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
+
+{
+  /* <ul>
+{news.articles.filter((article, index) => (index < 5)).map(article => {
+  return <li key={article.url}>
+    <p src={article.url}>{article.title}</p>
+    <a href={article.url}>
+      <p>Read Full Story</p>
+    </a>
+  </li>
+})}
+</ul> */
+}
 
 // `http://openweathermap.org/img/wn/${url}@2x.png`
 
