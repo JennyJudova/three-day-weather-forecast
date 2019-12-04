@@ -4,6 +4,7 @@ import axios from 'axios';
 
 export default function App() {
   const [city, setCity] = useState('London');
+  const [weatherList, setWeatherList] = useState();
 
   function getData() {
     const token = process.env.REACT_APP_WEATHER_ACCESS_KEY;
@@ -11,7 +12,11 @@ export default function App() {
       .get(
         `http://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=${token}`
       )
-      .then((res) => console.log(res.data))
+      .then((res) => {
+        setWeatherList(res.data.list);
+        console.log(res.data);
+        console.log(weatherList);
+      })
       .catch((err) => console.log(err.message));
   }
 
