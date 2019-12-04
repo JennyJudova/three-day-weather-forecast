@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
+import './style.scss';
 
 export default function App() {
   const [city, setCity] = useState('London');
@@ -46,11 +47,27 @@ export default function App() {
         <input value={city} onChange={handleCityChange} onKeyDown={keyPress} />
         <button type="submit">Submit</button>
       </form>
+      {weatherList && (
+        <div>
+          <p>{weatherList[0].dt_txt}</p>
+          <img
+            src={`http://openweathermap.org/img/wn/${weatherList[0].weather[0].icon}@2x.png`}
+            alt="weather logo"
+          />
+          <p>{weatherList[0].weather[0].description}</p>
+          <p>
+            {Math.round(weatherList[0].main.temp_min - 273.15)} °C -{' '}
+            {Math.round(weatherList[0].main.temp_max - 273.15)}°C
+          </p>
+        </div>
+      )}
     </div>
   );
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
+
+// `http://openweathermap.org/img/wn/${url}@2x.png`
 
 // class App extends React.Component {
 //   constructor() {
