@@ -24,6 +24,8 @@ Check the console for any issues and if there are check the package.json for any
 
 ## API used
 
+When more than one city has the same name the API chooses the larger of the two. So if you search for 'Perth' it will give the weather in Perth Australia, if you are searching for Perth in Scotland you should search for 'Perth, UK'
+
 ## Design inspiration
 
 https://darksky.net/forecast/40.7127,-74.0059/us12/en
