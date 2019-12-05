@@ -5,7 +5,7 @@ import './styles/style.scss';
 import UkCitiesWeather from './components/UkCitiesWeather';
 import YourLocation from './components/YourLocations';
 
-export default function App() {
+const App = () => {
   return (
     <div className="appWrapper">
       <h1>Weather App</h1>
@@ -13,6 +13,6 @@ export default function App() {
       <UkCitiesWeather />
     </div>
   );
-}
+};
 
 ReactDOM.render(<App />, document.getElementById('root'));
