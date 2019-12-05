@@ -71,6 +71,7 @@ I decided to show only the information in the object that has a unix time stamp 
 
 - Building on the challenges I would like to expand the app to show a more detailed 3-hour forecast breakdown for each day.
 - Currently the two components have some repetitive code, so another future improvement will be refactoring the current code.
+- Making the current web app mobile friendly. Currently the app can be viewed on a phone however because it was built as a web app it is not the most user friendly experience.
 
 ---
 
