@@ -1,23 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './style.scss';
+import './styles/style.scss';
 
-import Greeting from './components/Greeting';
 import UkCitiesWeather from './components/UkCitiesWeather';
 import YourLocation from './components/YourLocations';
-import RefreshButton from './components/RefreshButton';
 
 export default function App() {
   return (
-    <div>
+    <div className="appWrapper">
       <h1>Weather App</h1>
-      <Greeting />
+      <YourLocation />
       <UkCitiesWeather />
-      <RefreshButton />
     </div>
   );
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
-
-// <YourLocation />

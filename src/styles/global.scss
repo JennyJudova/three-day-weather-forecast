@@ -1,0 +1,29 @@
+* {
+  font-family: $font;
+  color: white;
+  margin: 0;
+  background-color: $background;
+
+  button {
+    background-color: $buttoncolor;
+    border: none;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+  }
+
+  button:hover {
+    background-color: $buttonhover;
+  }
+
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+.appWrapper {
+  margin: 20px;
+}

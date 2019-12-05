@@ -1,0 +1,11 @@
+$font: 'Alegreya Sans', sans-serif;
+$background: #86b9e0;
+$buttoncolor: #ffd632;
+$buttonhover: #91eae4;
+
+// #ffd632   #ffecae
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans&display=swap');
+@import './global.scss';
+@import './weatherDisplay.scss';
+@import './weatherNow.scss';
+@import './searchBar.scss';

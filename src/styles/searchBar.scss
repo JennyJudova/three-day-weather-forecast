@@ -1,0 +1,16 @@
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px 0 40px 0;
+  input {
+    padding: 15px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 18px;
+    border: 1px solid white;
+    margin-right: 40px;
+    background-color: white;
+    color: $buttoncolor;
+  }
+}

@@ -2,7 +2,12 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export default function UkCitiesWeather() {
-  const [ukCities] = useState(['Edinburgh', 'Cardiff', 'Belfast']);
+  const [ukCities, setUkCities] = useState([
+    'London',
+    'Edinburgh',
+    'Cardiff',
+    'Belfast'
+  ]);
   const [ukCitiesWeather, setUkCitiesWeather] = useState([]);
   const weekday = [
     'Sunday',
@@ -17,7 +22,6 @@ export default function UkCitiesWeather() {
   function getData() {
     const token = process.env.REACT_APP_WEATHER_ACCESS_KEY;
     let updatedCurrentUkCitiesWeather = ukCitiesWeather;
-    console.log('get data 3 locations');
     ukCities.map((ukCity) =>
       axios
         .get(
@@ -27,10 +31,6 @@ export default function UkCitiesWeather() {
           updatedCurrentUkCitiesWeather = updatedCurrentUkCitiesWeather.concat(
             res.data
           );
-          console.log(
-            'updatedCurrentUkCitiesWeather',
-            updatedCurrentUkCitiesWeather
-          );
           setUkCitiesWeather(updatedCurrentUkCitiesWeather);
         })
         .catch((err) => console.log(err.message))
@@ -39,17 +39,21 @@ export default function UkCitiesWeather() {
 
   useEffect(() => {
     getData();
-    console.log('use effect 3 locations');
   }, []);
 
+  function handleRefresh() {
+    setUkCities([]);
+    setUkCitiesWeather([]);
+  }
+
   return (
-    <div>
+    <div className="ukCitiesWeatherWrapper">
       {ukCitiesWeather && (
-        <div>
+        <div className="citiesWeatherWrapper">
           {ukCitiesWeather.map((cityWeather) => {
             return (
-              <div key={cityWeather.city.id}>
-                <p>{cityWeather.city.name}</p>
+              <div className="cityWeatherWrapper" key={cityWeather.city.id}>
+                <h4>{cityWeather.city.name}</h4>
                 <ul>
                   {cityWeather.list
                     .filter(
@@ -87,6 +91,9 @@ export default function UkCitiesWeather() {
           })}
         </div>
       )}
+      <button type="button" onClick={handleRefresh}>
+        Refresh
+      </button>
     </div>
   );
 }

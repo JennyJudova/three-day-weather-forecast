@@ -1,0 +1,33 @@
+.cityWeatherWrapper {
+  margin: 40px;
+  border-top: solid 1px white;
+  padding: 10 20px;
+  h4 {
+    text-transform: uppercase;
+    padding: 10px;
+    color: $buttoncolor;
+  }
+
+  p {
+    text-transform: capitalize;
+    padding-top: 10px;
+  }
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+li:last-of-type {
+  padding-right: 40px;
+}

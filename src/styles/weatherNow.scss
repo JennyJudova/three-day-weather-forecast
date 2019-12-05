@@ -1,0 +1,29 @@
+.weatherNowWrapper {
+  h3 {
+    text-transform: uppercase;
+    font-size: large;
+    color: $buttoncolor;
+  }
+  p {
+    text-transform: capitalize;
+  }
+}
+.weatherNow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  .weatherExtra {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+    p {
+      padding: 0 20px;
+      border-right: solid 1px $buttoncolor;
+    }
+    p:last-of-type {
+      border-right: none;
+    }
+  }
+}
