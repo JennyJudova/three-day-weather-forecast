@@ -65,10 +65,12 @@ The Five Day Open Weather API returns an array of 40 objects meaning each day is
 
 I decided to show only the information in the object that has a unix time stamp that is 24 hours away from the Get request . So if you are looking at the APP at 3pm on Friday, the Saturday forecast is showing you the weather at 3pm on Saturday.
 
-_## Future improvements_
+---
 
-1 - Building on the challenges I would like to expand the app to show a more detailed 3-hour forecast breakdown for each day.
-2 - Currently the two components have some repetitive code, so another future improvement will be refactoring the current code.
+## Future improvements
+
+- Building on the challenges I would like to expand the app to show a more detailed 3-hour forecast breakdown for each day.
+- Currently the two components have some repetitive code, so another future improvement will be refactoring the current code.
 
 ---
 
