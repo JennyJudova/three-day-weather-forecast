@@ -78,8 +78,11 @@ export default function UkCitiesWeather() {
                             </p>
                           ) : (
                             <p>
-                              {Math.round(weather.main.temp_min - 273.15)} °C -{' '}
-                              {Math.round(weather.main.temp_max - 273.15)}°C{' '}
+                              {Math.round(weather.main.temp_min - 273.15)} °C-
+                              {'  '}
+                              {Math.round(
+                                weather.main.temp_max - 273.15
+                              )}°C{' '}
                             </p>
                           )}
                         </li>
