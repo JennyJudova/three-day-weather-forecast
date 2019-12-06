@@ -18,7 +18,7 @@ export default function YourLocation() {
     const token = process.env.REACT_APP_WEATHER_ACCESS_KEY;
     axios
       .get(
-        `http://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=${token}`
+        `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=${token}`
       )
       .then((res) => {
         setWeatherList(res.data.list);
@@ -56,7 +56,7 @@ export default function YourLocation() {
           <div className="weatherNow">
             <h3>Weather Now in {city}</h3>
             <img
-              src={`https://cors-anywhere.herokuapp.com/http://openweathermap.org/img/wn/${weatherList[0].weather[0].icon}@2x.png`}
+              src={`http://openweathermap.org/img/wn/${weatherList[0].weather[0].icon}@2x.png`}
               alt="weather logo"
             />
             <p>{weatherList[0].weather[0].description}</p>
