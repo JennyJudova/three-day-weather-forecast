@@ -4,6 +4,8 @@ This is a three day weather forecast app.
 
 The app shows the weather in the four British capitals, the user can also see the weather in cities they search for. To not see the weather in the four UK capitals just press ‘refresh’.
 
+You can use the app via Heroku https://three-day-weather.herokuapp.com/.
+
 ---
 
 ## Getting started
