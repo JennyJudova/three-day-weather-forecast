@@ -56,7 +56,7 @@ export default function YourLocation() {
           <div className="weatherNow">
             <h3>Weather Now in {city}</h3>
             <img
-              src={`http://openweathermap.org/img/wn/${weatherList[0].weather[0].icon}@2x.png`}
+              src={`https://cors-anywhere.herokuapp.com/http://openweathermap.org/img/wn/${weatherList[0].weather[0].icon}@2x.png`}
               alt="weather logo"
             />
             <p>{weatherList[0].weather[0].description}</p>

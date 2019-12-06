@@ -67,7 +67,7 @@ export default function UkCitiesWeather() {
                         <li key={weather.dt}>
                           <p>{weekday[new Date(weather.dt * 1000).getDay()]}</p>
                           <img
-                            src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
+                            src={`https://cors-anywhere.herokuapp.com/http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
                             alt="weather logo"
                           />
                           <p>{weather.weather[0].description}</p>
